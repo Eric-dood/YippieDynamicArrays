@@ -5,28 +5,28 @@ using namespace std;
 
 const int SIZE = 5;
 
-double * enterArrayData();
+void enterArrayData(double*);
 void outputArrayData(double*);
 double sumArray(double*);
 
 int main()
 {
     double *arrayPtr = nullptr;
-    arrayPtr = enterArrayData();
+    enterArrayData(arrayPtr);
     outputArrayData(arrayPtr);
 }
 
-double * enterArrayData()
+void enterArrayData(double *arr)
 {
-    double *temp = nullptr;
+    double temp;
     cout << "Data entry for the array:" << endl;
     for (int i = 0; i < SIZE; i++)
     {
         cout << "\t Element #" << i << ": ";
-        cin >> *(temp + i);
+        cin >> temp;
+        *(arr + i) = temp;
         cin.ignore(1000, 10);
     }
-    return temp;
 }
 
 void outputArrayData(double *arr)
