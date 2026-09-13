@@ -11,9 +11,10 @@ double sumArray(double*);
 
 int main()
 {
-    double *arrayPtr = nullptr;
+    double *arrayPtr = new double[SIZE];
     enterArrayData(arrayPtr);
     outputArrayData(arrayPtr);
+    cout << endl << "Sum of values: " << sumArray(arrayPtr) << endl;
 }
 
 void enterArrayData(double *arr)
@@ -27,6 +28,7 @@ void enterArrayData(double *arr)
         *(arr + i) = temp;
         cin.ignore(1000, 10);
     }
+    cout << "Data entry complete." << endl;
 }
 
 void outputArrayData(double *arr)
